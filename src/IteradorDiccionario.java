@@ -12,7 +12,7 @@ public class IteradorDiccionario<K,V> implements Iterador<K> {
     //metodo
     @Override
     public boolean hasNext() {
-        return actual.getSiguiente() != null;
+        return actual != null;
     }
     @Override
     public K next() {

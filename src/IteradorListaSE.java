@@ -9,9 +9,7 @@ public class IteradorListaSE<T> implements Iterador<T> {
 
     @Override
     public boolean hasNext() {
-        if(actual == null){
-            return false;}
-        return actual.getSiguiente() != null;
+        return actual != null;
     }
 
     @Override

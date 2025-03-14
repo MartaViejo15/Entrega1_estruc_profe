@@ -9,9 +9,9 @@ class IteradorDiccionarioTest {
         DiccionarioBasico<Integer,String> diccionario = new DiccionarioBasico<>();
         diccionario.add(1,"a");
         IteradorDiccionario<Integer,String> iteradorDiccionario = new IteradorDiccionario<>(diccionario);
-        assertFalse(iteradorDiccionario.hasNext());
-        diccionario.add(2,"b");
         assertTrue(iteradorDiccionario.hasNext());
+        iteradorDiccionario.next();
+        assertFalse(iteradorDiccionario.hasNext());
     }
 
     @Test

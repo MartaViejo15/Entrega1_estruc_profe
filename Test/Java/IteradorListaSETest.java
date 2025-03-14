@@ -3,13 +3,10 @@ import org.junit.jupiter.api.Test;
 class IteradorListaSETest {
 
     ListaSE<Integer> lista = new ListaSE<>();
-    IteradorListaSE<Integer> iterador = new IteradorListaSE<>(lista);
 
     @Test
     void hasNext() {
-        iterador.hasNext();
         lista.add(1);
-        lista.add(2);
         IteradorListaSE<Integer> iterador2 = new IteradorListaSE<>(lista);
         iterador2.hasNext();
         iterador2.next();
