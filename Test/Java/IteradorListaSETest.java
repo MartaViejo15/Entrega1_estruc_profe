@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class IteradorListaSETest {
 
     ListaSE<Integer> lista = new ListaSE<>();
@@ -11,11 +9,11 @@ class IteradorListaSETest {
     void hasNext() {
         iterador.hasNext();
         lista.add(1);
-        iterador.hasNext();
         lista.add(2);
-        iterador.hasNext();
-        iterador.next();
-        iterador.hasNext();
+        IteradorListaSE<Integer> iterador2 = new IteradorListaSE<>(lista);
+        iterador2.hasNext();
+        iterador2.next();
+        iterador2.hasNext();
     }
 
     @Test
@@ -23,7 +21,8 @@ class IteradorListaSETest {
         lista.add(1);
         lista.add(2);
         lista.add(3);
-        iterador.next();
+        IteradorListaSE<Integer> iterador2 = new IteradorListaSE<>(lista);
+        iterador2.next();
     }
 
     @Test

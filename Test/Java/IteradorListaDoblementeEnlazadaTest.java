@@ -48,10 +48,32 @@ class IteradorListaDoblementeEnlazadaTest {
         iterador.next();
         iterador.delete();
         assertFalse(lista.delete(2));
-        assertEquals(null, iterador.next());
+        assertNull(iterador.next());
 
         iterador.delete();
         assertTrue(lista.delete(3));
         assertFalse(iterador.hasNext());
+    }
+    @Test
+    void hasPrevious() {
+        ListaDoblementeEnlazada<Integer> l = new ListaDoblementeEnlazada<>();
+        l.add(1);
+        l.add(2);
+        Iterador<Integer> it = l.getIterador();
+        IteradorListaDoblementeEnlazada<Integer> i = (IteradorListaDoblementeEnlazada<Integer>) it;
+        assertFalse(i.hasPrevious());
+        i.next();
+        assertTrue(i.hasPrevious());
+    }
+
+    @Test
+    void previous() {
+        ListaDoblementeEnlazada<Integer> l = new ListaDoblementeEnlazada<>();
+        l.add(1);
+        l.add(2);
+        Iterador<Integer> it = l.getIterador();
+        IteradorListaDoblementeEnlazada<Integer> i = (IteradorListaDoblementeEnlazada<Integer>) it;
+        i.next();
+        assertEquals(2, i.previous());
     }
 }

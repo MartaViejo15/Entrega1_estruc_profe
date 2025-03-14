@@ -9,19 +9,15 @@ public class IteradorListaSE<T> implements Iterador<T> {
 
     @Override
     public boolean hasNext() {
-        ElementoSE<T> aux = Lista.cabeza;
-        if(Lista.cabeza == null){
+        if(actual == null){
             return false;}
-        if(aux.getSiguiente() != null){
-            return true;
-        }else
-            return false;
+        return actual.getSiguiente() != null;
     }
 
     @Override
     public T next() {
-        T temporal = Lista.cabeza.getDato();
-        actual = Lista.cabeza.getSiguiente();
+        T temporal = actual.getDato();
+        actual = actual.getSiguiente();
         return temporal;
     }
 
