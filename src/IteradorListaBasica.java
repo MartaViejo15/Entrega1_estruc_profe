@@ -1,14 +1,12 @@
 public class IteradorListaBasica<T> implements Iterador<T>{
     //atributo
     protected ListaBasica<T> lista;
-    protected T actual;
     protected int pos;
 
     //constructor
     public IteradorListaBasica(ListaBasica<T> lista) {
         this.lista = lista;
         this.pos = 0;
-        this.actual = lista.elemento[pos];
     }
 
     //metodo
@@ -18,9 +16,9 @@ public class IteradorListaBasica<T> implements Iterador<T>{
     }
     @Override
     public T next(){
-        actual = lista.elemento[pos];
+        T temporal = lista.elemento[pos];
         pos++;
-        return actual;
+        return temporal;
     }
     @Override
     public void delete(){
@@ -28,6 +26,5 @@ public class IteradorListaBasica<T> implements Iterador<T>{
         if(!hasNext()){
             pos--;
         }
-        actual = lista.elemento[pos];
     }
 }

@@ -54,17 +54,6 @@ class IteradorListaDoblementeEnlazadaTest {
         assertTrue(lista.delete(3));
         assertFalse(iterador.hasNext());
     }
-    @Test
-    void hasPrevious() {
-        ListaDoblementeEnlazada<Integer> l = new ListaDoblementeEnlazada<>();
-        l.add(1);
-        l.add(2);
-        Iterador<Integer> it = l.getIterador();
-        IteradorListaDoblementeEnlazada<Integer> i = (IteradorListaDoblementeEnlazada<Integer>) it;
-        assertFalse(i.hasPrevious());
-        i.next();
-        assertTrue(i.hasPrevious());
-    }
 
     @Test
     void previous() {

@@ -30,12 +30,10 @@ public class IteradorListaDoblementeEnlazada<T> implements Iterador<T> {
         lista.delete(eliminar.getDato());
     }
 
-    /*Se puede añadir operaciones hasPrevious() y previous(),
+    /*La operacion hasPrevious es identico que es de hasNext(), ya que se refiere si existe o no.
+    Se puede añadir la operacion previous(),
     tiene sentido si quiero recorrer la lista inversamente (es decir, desde el final),
     siendo esto una de las ventajas de las listas doblemente enlazadas.*/
-    public boolean hasPrevious() {
-        return actual.getAnterior() != null;
-    }
     public T previous() {
         ElementoDoble<T> temporal = actual;
         actual = actual.getAnterior();
